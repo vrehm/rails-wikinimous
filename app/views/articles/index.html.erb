@@ -1,0 +1,7 @@
+<p><%= link_to 'Create a new article', new_article_path %></p>
+<% @articles.each do |article| %>
+  <h1><%= link_to article.title.capitalize, article_path(article) %></h1>
+  <p>Content: <%= article.content %></p>
+  <p><%= link_to 'Edit this article', edit_article_path(article) %></p>
+  <p><%= link_to "Delete", article_path(article), method: :delete %></p>
+<% end %>
